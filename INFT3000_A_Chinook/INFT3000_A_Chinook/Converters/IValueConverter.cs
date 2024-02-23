@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 
-namespace INFT3000_A_Chinook.Converters //Now A3
+namespace INFT3000_A_Chinook.Converters  
 {
     // Converts milliseconds to a string representation in minutes.
     public class MillisecondsToMinutesConverter : IValueConverter

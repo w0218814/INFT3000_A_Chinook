@@ -7,7 +7,7 @@ using INFT3000_A_Chinook.Models;
 // Scaffold-DbContext command:
 // Scaffold-DbContext "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Chinook;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Generated -ContextDir Data -ContextNamespace INFT3000_A_Chinook.Data -Namespace INFT3000_A_Chinook.Models -Force
 
-namespace INFT3000_A_Chinook.Data; //Now A3
+namespace INFT3000_A_Chinook.Data;  
 
 
 // Partial class used (Project Architecture & Code requirement)

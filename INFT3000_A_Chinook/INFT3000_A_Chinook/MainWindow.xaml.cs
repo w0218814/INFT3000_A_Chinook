@@ -1,28 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace INFT3000_A_Chinook
+namespace INFT3000_A_Chinook  
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        // Handler for window loaded
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Navigate to Home Page on load
+            mainFrame.NavigationService.Navigate(new Pages.Home());
+        }
+
+        // Navigation handlers demonstrate effective use of LINQ for page transitions
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.Home());
+        }
+
+        private void ViewAlbums_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.Albums());
+        }
+
+        private void ViewArtists_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.Artists());
+        }
+
+        private void ViewTracks_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.Tracks());
+        }
+
+        private void ViewMusicCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.MusicCatalog());
+        }
+
+        private void ViewCustomerOrders_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(new Pages.CustomerOrders());
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

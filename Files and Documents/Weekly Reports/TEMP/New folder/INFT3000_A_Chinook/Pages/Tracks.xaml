@@ -1,0 +1,74 @@
+﻿<Page x:Class="PROG2500_A2_Chinook.Pages.Tracks"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PROG2500_A2_Chinook.Pages"
+      xmlns:converters="clr-namespace:PROG2500_A2_Chinook.Converters"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Tracks">
+
+    <Page.Resources>
+        <CollectionViewSource x:Key="tracksViewSource" />
+        <converters:MillisecondsToMinutesConverter x:Key="MillisecondsToMinutesConverter"/>
+        <converters:BytesToMegabytesConverter x:Key="BytesToMegabytesConverter"/>
+    </Page.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Title TextBlock -->
+            <RowDefinition Height="Auto"/>
+            <!-- Search TextBox -->
+            <RowDefinition Height="*"/>
+            <!-- ListView -->
+        </Grid.RowDefinitions>
+
+        <!-- Title TextBlock -->
+        <TextBlock Grid.Row="0" Text="TRACKS" FontSize="48" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <!-- Search Box for Tracks -->
+        <TextBox x:Name="TrackSearchTextBox" Grid.Row="1"
+                 Text="Search by track name..." 
+                 GotFocus="TrackSearchTextBox_GotFocus"
+                 LostFocus="TrackSearchTextBox_LostFocus"
+                 TextChanged="SearchTextBox_TextChanged"
+                 Margin="5" Padding="3"/>
+
+        <!-- ListView to display tracks -->
+        <ListView ItemsSource="{Binding Source={StaticResource tracksViewSource}}"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  Grid.Row="2"
+                  HorizontalAlignment="Stretch"
+                  Margin="0,0,10,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <StackPanel Orientation="Vertical" Margin="5">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Composer, TargetNullValue='Unknown'}" FontStyle="Italic"/>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Left" Margin="5,0,5,5">
+                            <Border Background="#EEEEEE" 
+                                    CornerRadius="5" 
+                                    Padding="5">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Milliseconds, Converter={StaticResource MillisecondsToMinutesConverter}}" 
+                                               Margin="5,0" />
+                                    <TextBlock Text="{Binding Bytes, Converter={StaticResource BytesToMegabytesConverter}}" 
+                                               Margin="5,0" />
+                                    <TextBlock Text="{Binding UnitPrice, StringFormat='{}${0:F2}'}" 
+                                               Margin="5,0" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

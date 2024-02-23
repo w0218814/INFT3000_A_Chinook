@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace INFT3000_A_Chinook.Pages //Now A3
+namespace INFT3000_A_Chinook.Pages  
 {
     /// <summary>
     /// Interaction logic for Home.xaml

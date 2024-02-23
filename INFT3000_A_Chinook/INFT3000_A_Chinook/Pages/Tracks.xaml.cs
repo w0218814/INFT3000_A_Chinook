@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Windows;
 
-namespace INFT3000_A_Chinook.Pages //Now A3
+namespace INFT3000_A_Chinook.Pages  
 {
     public partial class Tracks : Page
     {

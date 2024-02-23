@@ -1,0 +1,67 @@
+﻿<Application x:Class="PROG2500_A2_Chinook.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PROG2500_A2_Chinook"
+             xmlns:converters="clr-namespace:PROG2500_A2_Chinook.Converters"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!-- Converters -->
+        <converters:MillisecondsToMinutesConverter x:Key="MillisecondsToMinutesConverter"/>
+        <converters:BytesToMegabytesConverter x:Key="BytesToMegabytesConverter"/>
+
+        <!-- Global Style for TextBlock -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+
+        <!-- Specific Style for Page Titles -->
+        <Style x:Key="PageTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <!-- Additional Setters can be placed here if needed -->
+        </Style>
+
+        <!-- Style for TextBlock in MenuItem Header -->
+        <Style TargetType="TextBlock" x:Key="MenuItemHeaderStyle">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <!-- Global Style for Menu -->
+        <Style TargetType="Menu">
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <!-- Global Style for MenuItem -->
+        <Style TargetType="MenuItem">
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5,2"/>
+        </Style>
+
+        <!-- Global Style for ToolBar -->
+        <Style TargetType="ToolBar">
+            <Setter Property="Background" Value="#0078D7"/>
+        </Style>
+
+        <!-- Global Style for Button in a ToolBar -->
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="5,2"/>
+        </Style>
+
+        <!-- Define styles for ListViewItem TextBlocks -->
+        <Style x:Key="listViewTitle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <!-- Additional style properties for titles can be added here -->
+        </Style>
+        <Style x:Key="listViewSubtitle" TargetType="TextBlock">
+            <!-- Style properties for subtitles can be added here -->
+        </Style>
+
+    </Application.Resources>
+</Application>

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace INFT3000_A_Chinook.Pages //Now A3
+namespace INFT3000_A_Chinook.Pages  
 {
     public class DebugConverter : IValueConverter
     {

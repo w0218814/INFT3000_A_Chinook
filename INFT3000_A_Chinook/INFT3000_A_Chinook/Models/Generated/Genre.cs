@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace INFT3000_A_Chinook.Models; //Now A3
+namespace INFT3000_A_Chinook.Models;  
 
 public partial class Genre
 {
