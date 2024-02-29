@@ -10,7 +10,7 @@ namespace INFT3000_A_Chinook
             InitializeComponent();
         }
 
-        // Handler for window loaded
+        // // Handler for window loaded
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Navigate to Home Page on load

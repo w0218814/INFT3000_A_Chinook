@@ -9,7 +9,7 @@ namespace INFT3000_A_Chinook.Pages
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // This line will break into the debugger when the binding updates.
+            // // This line will break into the debugger when the binding updates.
             // You can inspect the 'value' being passed in to see what data is being bound.
             Debugger.Break();
 

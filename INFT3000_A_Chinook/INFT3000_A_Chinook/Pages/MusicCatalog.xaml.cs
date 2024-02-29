@@ -46,7 +46,7 @@ namespace INFT3000_A_Chinook.Pages // Now A3
 
         private void LoadData(string searchQuery = null)
         {
-            // LINQ query to filter and group data demonstrates effective use of LINQ in the context of the application
+            // // LINQ query to filter and group data demonstrates effective use of LINQ in the context of the application
             // This section meets the requirement of a searchable Music Catalog page grouped by the first letter of the artist's name
 
             if (_context == null || _context.Artists == null)

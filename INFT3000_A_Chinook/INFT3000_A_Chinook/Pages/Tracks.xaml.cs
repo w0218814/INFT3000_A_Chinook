@@ -24,7 +24,7 @@ namespace INFT3000_A_Chinook.Pages
         private void Tracks_Loaded(object sender, RoutedEventArgs e)
         {
             tracksViewSource = (CollectionViewSource)FindResource(nameof(tracksViewSource));
-            // Ensure _fullTrackList is initialized before using it
+            // // Ensure _fullTrackList is initialized before using it
             _fullTrackList = new ObservableCollection<Track>(_context.Tracks.ToList());
             tracksViewSource.Source = _fullTrackList;
         }
