@@ -8,30 +8,36 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
 
-    <!-- UI Layout: Data for Home page displayed using controls with a clean and readable visual display -->
-    <Grid>
+    <Page.Resources>
+        <!-- Spotify-like Theme Colors -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- UI Layout: Application forms design with sections for content -->
-        <!-- Visual Display: Clean and readable presentation of the welcome message -->
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Welcome to Chinook Music!" 
                        FontSize="48" 
                        FontWeight="Bold" 
-                       Margin="10"/>
+                       Margin="10"
+                       Foreground="{StaticResource AccentColor}"/>
             <TextBlock Text="Your one-stop shop for music, albums, and more. Browse our vast collection and discover your next favorite tune."
-                       FontSize="12" 
-                       Margin="10"/>
+                       FontSize="16" 
+                       Margin="10"
+                       Foreground="{StaticResource TextColor}"/>
         </StackPanel>
 
-        <!-- Visual Display: Clean and readable presentation of the latest updates section -->
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-            <TextBlock Text="Latest Updates" FontSize="24" FontWeight="Bold" Margin="5"/>
-            <ListBox Width="680" Height="100" Margin="5">
+            <TextBlock Text="Latest Updates" FontSize="24" FontWeight="Bold" Margin="5" Foreground="{StaticResource AccentColor}"/>
+            <ListBox Width="680" Height="100" Margin="5" Background="{StaticResource BackgroundColor}" Foreground="{StaticResource TextColor}">
                 <ListBoxItem Content="New Album Releases this Week!"/>
                 <ListBoxItem Content="Exclusive Interview with Artist XYZ!"/>
                 <ListBoxItem Content="Summer Music Festival - Get Your Tickets Now!"/>

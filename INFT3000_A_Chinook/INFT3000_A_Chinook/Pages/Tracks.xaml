@@ -13,9 +13,35 @@
         <CollectionViewSource x:Key="tracksViewSource" />
         <converters:MillisecondsToMinutesConverter x:Key="MillisecondsToMinutesConverter"/>
         <converters:BytesToMegabytesConverter x:Key="BytesToMegabytesConverter"/>
+        <!-- Spotify-like Theme Colors -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
+        <SolidColorBrush x:Key="DetailBackgroundColor" Color="#1DB954"/>
+        <!-- Green background for details -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="{StaticResource SecondaryTextColor}"/>
+            <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        </Style>
+        <Style TargetType="Border" x:Key="DetailBorderStyle">
+            <!-- Fixed: Added x:Key -->
+            <Setter Property="Background" Value="{StaticResource DetailBackgroundColor}"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
     </Page.Resources>
 
-    <Grid Margin="10">
+    <Grid Margin="10" Background="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <!-- Title TextBlock -->
@@ -27,7 +53,8 @@
 
         <!-- Title TextBlock -->
         <TextBlock Grid.Row="0" Text="TRACKS" FontSize="48" 
-                   HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Foreground="{StaticResource AccentColor}"/>
 
         <!-- Search Box for Tracks -->
         <TextBox x:Name="TrackSearchTextBox" Grid.Row="1"
@@ -53,16 +80,14 @@
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Left" Margin="5,0,5,5">
-                            <Border Background="#EEEEEE" 
-                                    CornerRadius="5" 
-                                    Padding="5">
+                            <Border Style="{StaticResource DetailBorderStyle}">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Milliseconds, Converter={StaticResource MillisecondsToMinutesConverter}}" 
-                                               Margin="5,0" />
+                                               Margin="5,0" Foreground="{StaticResource BackgroundColor}"/>
                                     <TextBlock Text="{Binding Bytes, Converter={StaticResource BytesToMegabytesConverter}}" 
-                                               Margin="5,0" />
+                                               Margin="5,0" Foreground="{StaticResource BackgroundColor}"/>
                                     <TextBlock Text="{Binding UnitPrice, StringFormat='{}${0:F2}'}" 
-                                               Margin="5,0" />
+                                               Margin="5,0" Foreground="{StaticResource BackgroundColor}"/>
                                 </StackPanel>
                             </Border>
                         </StackPanel>

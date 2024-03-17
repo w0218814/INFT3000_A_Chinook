@@ -8,7 +8,7 @@
         Loaded="Window_Loaded"
         Title="Chinook Music Store" Height="650" Width="900">
 
-    <!-- All images are assigned and referenced as Resources in the project -->
+    <!-- Spotify-like Theme Resources -->
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="home" UriSource="/images/home.png" />
@@ -17,13 +17,16 @@
             <BitmapImage x:Key="tracks" UriSource="/images/tracks.png" />
             <BitmapImage x:Key="customerOrders" UriSource="/images/order.png" />
             <BitmapImage x:Key="musicCatalog" UriSource="/images/search.png" />
+            <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
+            <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+            <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
         </ResourceDictionary>
     </Window.Resources>
 
-    <DockPanel>
-        <!-- UI contains a menu for File and Page Navigation -->
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
+    <DockPanel Background="{StaticResource BackgroundColor}">
+        <!-- Menu with Spotify-like Theme -->
+        <Menu DockPanel.Dock="Top" Background="{StaticResource BackgroundColor}" Foreground="{StaticResource TextColor}">
+            <MenuItem Header="_File" Foreground="{StaticResource TextColor}">
                 <MenuItem Header="_Exit" Click="Exit_Click"/>
             </MenuItem>
             <MenuItem Header="_Pages">
@@ -52,7 +55,6 @@
                         <Image Source="{StaticResource musicCatalog}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <!-- New MenuItem for Customer Orders -->
                 <MenuItem x:Name="ViewCustomerOrdersMenu" Header="_Customer Orders" Click="ViewCustomerOrders_Click">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource customerOrders}" />
@@ -61,8 +63,8 @@
             </MenuItem>
         </Menu>
 
-        <!-- Toolbar with buttons for each of the application pages -->
-        <ToolBar DockPanel.Dock="Left">
+        <!-- Toolbar with Spotify-like Theme -->
+        <ToolBar DockPanel.Dock="Left" Background="{StaticResource BackgroundColor}">
             <StackPanel Orientation="Vertical" Width="50">
                 <Button x:Name="HomeButton" Click="Home_Click" ToolTip="Home">
                     <Image Source="{StaticResource home}" />
@@ -79,21 +81,12 @@
                 <Button x:Name="MusicCatalogButton" Click="ViewMusicCatalog_Click" ToolTip="Music Catalog">
                     <Image Source="{StaticResource musicCatalog}" />
                 </Button>
-                <!-- New Button for Customer Orders -->
                 <Button x:Name="CustomerOrdersButton" Click="ViewCustomerOrders_Click" ToolTip="Customer Orders">
                     <Image Source="{StaticResource customerOrders}" />
                 </Button>
             </StackPanel>
         </ToolBar>
 
-        <!-- Main Frame where the pages will be loaded -->
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Background="{StaticResource BackgroundColor}" />
     </DockPanel>
-    <!-- References for icon images
-    <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Dave Gandy - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/customer" title="customer icons">Customer icons created by Freepik - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/product-return" title="product return icons">Product return icons created by 3Five - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/catalog" title="catalog icons">Catalog icons created by Royyan Wijaya - Flaticon</a>
-    <a href="https://www.flaticon.com/free-icons/logistics" title="logistics icons">Logistics icons created by Parzival’ 1997 - Flaticon</a>
-    -->
 </Window>
