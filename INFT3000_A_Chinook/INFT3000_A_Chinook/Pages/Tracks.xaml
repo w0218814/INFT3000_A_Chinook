@@ -13,26 +13,18 @@
         <CollectionViewSource x:Key="tracksViewSource" />
         <converters:MillisecondsToMinutesConverter x:Key="MillisecondsToMinutesConverter"/>
         <converters:BytesToMegabytesConverter x:Key="BytesToMegabytesConverter"/>
-        <!-- Adjusted Theme Colors and Styles for Green Dominant Scheme -->
         <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
-        <!-- Green as dominant background -->
         <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
-        <!-- Black for accentuating elements -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
-        <!-- White text remains unchanged -->
         <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
-        <!-- Secondary text color unchanged -->
         <SolidColorBrush x:Key="DetailBackgroundColor" Color="#198844"/>
-        <!-- A darker shade of green for details -->
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Foreground" Value="{StaticResource SecondaryTextColor}"/>
             <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
-            <!-- Now uses the dominant green -->
             <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
-            <!-- Black border -->
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style TargetType="ListView">
@@ -49,20 +41,14 @@
     <Grid Margin="10" Background="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Title TextBlock -->
             <RowDefinition Height="Auto"/>
-            <!-- Search TextBox -->
             <RowDefinition Height="*"/>
-            <!-- ListView -->
         </Grid.RowDefinitions>
 
-        <!-- Title TextBlock -->
         <TextBlock Grid.Row="0" Text="TRACKS" FontSize="48" 
                    HorizontalAlignment="Left" VerticalAlignment="Center"
                    Foreground="{StaticResource AccentColor}"/>
-        <!-- Black for this header -->
 
-        <!-- Search Box for Tracks -->
         <TextBox x:Name="TrackSearchTextBox" Grid.Row="1"
                  Text="Search by track name..." 
                  GotFocus="TrackSearchTextBox_GotFocus"
@@ -70,10 +56,7 @@
                  TextChanged="SearchTextBox_TextChanged"
                  Margin="5" Padding="3"/>
 
-        <!-- ListView to display tracks -->
         <ListView ItemsSource="{Binding Source={StaticResource tracksViewSource}}"
-                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                   Grid.Row="2"
                   HorizontalAlignment="Stretch"
                   Margin="0,0,10,0">
@@ -86,7 +69,7 @@
                         </StackPanel>
 
                         <StackPanel HorizontalAlignment="Left" Margin="5,0,5,5">
-                            <Border Style="{StaticResource DetailBorderStyle}">
+                            <Border Style="{StaticResource DetailBorderStyle}" MouseLeftButtonUp="TrackDetail_MouseLeftButtonUp">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Milliseconds, Converter={StaticResource MillisecondsToMinutesConverter}}" 
                                                Margin="5,0" Foreground="{StaticResource TextColor}"/>
