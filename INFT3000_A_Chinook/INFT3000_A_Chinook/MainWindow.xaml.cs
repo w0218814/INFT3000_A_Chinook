@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Navigation;
 
-namespace INFT3000_A_Chinook  
+namespace INFT3000_A_Chinook
 {
     public partial class MainWindow : Window
     {
@@ -10,7 +10,7 @@ namespace INFT3000_A_Chinook
             InitializeComponent();
         }
 
-        // // Handler for window loaded
+        // Handler for window loaded
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Navigate to Home Page on load
@@ -44,10 +44,7 @@ namespace INFT3000_A_Chinook
             mainFrame.NavigationService.Navigate(new Pages.MusicCatalog());
         }
 
-        private void ViewCustomerOrders_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.NavigationService.Navigate(new Pages.CustomerOrders());
-        }
+        // Customer Orders handler removed
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {

@@ -9,11 +9,15 @@
       Title="Home">
 
     <Page.Resources>
-        <!-- Spotify-like Theme Colors -->
-        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <!-- Adjusted Theme Colors and Styles for Green Dominant Scheme -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
+        <!-- Green as dominant background -->
+        <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
+        <!-- Black for accentuating elements (previously background) -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <!-- White text remains unchanged -->
         <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
+        <!-- Secondary text color unchanged -->
     </Page.Resources>
 
     <Grid Background="{StaticResource BackgroundColor}">
@@ -29,14 +33,17 @@
                        FontWeight="Bold" 
                        Margin="10"
                        Foreground="{StaticResource AccentColor}"/>
+            <!-- Black for accentuating this header -->
             <TextBlock Text="Your one-stop shop for music, albums, and more. Browse our vast collection and discover your next favorite tune."
                        FontSize="16" 
                        Margin="10"
                        Foreground="{StaticResource TextColor}"/>
+            <!-- White for regular text -->
         </StackPanel>
 
         <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
             <TextBlock Text="Latest Updates" FontSize="24" FontWeight="Bold" Margin="5" Foreground="{StaticResource AccentColor}"/>
+            <!-- Black for accentuating this header -->
             <ListBox Width="680" Height="100" Margin="5" Background="{StaticResource BackgroundColor}" Foreground="{StaticResource TextColor}">
                 <ListBoxItem Content="New Album Releases this Week!"/>
                 <ListBoxItem Content="Exclusive Interview with Artist XYZ!"/>

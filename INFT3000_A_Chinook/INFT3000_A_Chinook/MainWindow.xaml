@@ -8,62 +8,62 @@
         Loaded="Window_Loaded"
         Title="Chinook Music Store" Height="650" Width="900">
 
-    <!-- Spotify-like Theme Resources -->
+    <!-- Adjusted Theme Resources for Green Dominant Scheme -->
     <Window.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="home" UriSource="/images/home.png" />
             <BitmapImage x:Key="artists" UriSource="/images/customer.png" />
             <BitmapImage x:Key="albums" UriSource="/images/product.png" />
             <BitmapImage x:Key="tracks" UriSource="/images/tracks.png" />
-            <BitmapImage x:Key="customerOrders" UriSource="/images/order.png" />
             <BitmapImage x:Key="musicCatalog" UriSource="/images/search.png" />
-            <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
-            <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+            <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
+            <!-- Green as dominant background -->
+            <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
+            <!-- Black for accentuating elements -->
             <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+            <!-- White text remains -->
         </ResourceDictionary>
     </Window.Resources>
 
     <DockPanel Background="{StaticResource BackgroundColor}">
-        <!-- Menu with Spotify-like Theme -->
+        <!-- Menu with adjusted Theme -->
         <Menu DockPanel.Dock="Top" Background="{StaticResource BackgroundColor}" Foreground="{StaticResource TextColor}">
-            <MenuItem Header="_File" Foreground="{StaticResource TextColor}">
-                <MenuItem Header="_Exit" Click="Exit_Click"/>
+            <MenuItem Header="_File" Style="{StaticResource MenuItemStyle}">
+
+                <MenuItem Header="_Exit" Click="Exit_Click" Style="{StaticResource MenuItemStyle}"/>
+
             </MenuItem>
             <MenuItem Header="_Pages">
-                <MenuItem x:Name="HomeMenu" Header="_Home" Click="Home_Click">
+                <MenuItem x:Name="HomeMenu" Header="_Home" Click="Home_Click"  Style="{StaticResource MenuItemStyle}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource home}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="ViewAlbumsMenu" Header="_View Albums" Click="ViewAlbums_Click">
+                <MenuItem x:Name="ViewAlbumsMenu" Header="_View Albums" Click="ViewAlbums_Click"  Style="{StaticResource MenuItemStyle}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource albums}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="ViewArtistsMenu" Header="_View Artists" Click="ViewArtists_Click">
+                <MenuItem x:Name="ViewArtistsMenu" Header="_View Artists" Click="ViewArtists_Click"  Style="{StaticResource MenuItemStyle}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource artists}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="ViewTracksMenu" Header="_View Tracks" Click="ViewTracks_Click">
+                <MenuItem x:Name="ViewTracksMenu" Header="_View Tracks" Click="ViewTracks_Click"  Style="{StaticResource MenuItemStyle}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource tracks}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="ViewMusicCatalogMenu" Header="_Music Catalog" Click="ViewMusicCatalog_Click">
+                <MenuItem x:Name="ViewMusicCatalogMenu" Header="_Music Catalog" Click="ViewMusicCatalog_Click"  Style="{StaticResource MenuItemStyle}">
                     <MenuItem.Icon>
                         <Image Source="{StaticResource musicCatalog}" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="ViewCustomerOrdersMenu" Header="_Customer Orders" Click="ViewCustomerOrders_Click">
-                    <MenuItem.Icon>
-                        <Image Source="{StaticResource customerOrders}" />
-                    </MenuItem.Icon>
-                </MenuItem>
+                <!-- Customer Orders section removed -->
             </MenuItem>
         </Menu>
 
-        <!-- Toolbar with Spotify-like Theme -->
+        <!-- Toolbar with adjusted Theme -->
         <ToolBar DockPanel.Dock="Left" Background="{StaticResource BackgroundColor}">
             <StackPanel Orientation="Vertical" Width="50">
                 <Button x:Name="HomeButton" Click="Home_Click" ToolTip="Home">
@@ -81,9 +81,7 @@
                 <Button x:Name="MusicCatalogButton" Click="ViewMusicCatalog_Click" ToolTip="Music Catalog">
                     <Image Source="{StaticResource musicCatalog}" />
                 </Button>
-                <Button x:Name="CustomerOrdersButton" Click="ViewCustomerOrders_Click" ToolTip="Customer Orders">
-                    <Image Source="{StaticResource customerOrders}" />
-                </Button>
+                <!-- Customer Orders button removed -->
             </StackPanel>
         </ToolBar>
 

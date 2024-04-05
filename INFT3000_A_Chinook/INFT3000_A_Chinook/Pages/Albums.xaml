@@ -9,20 +9,28 @@
       Title="Albums">
 
     <Page.Resources>
-        <CollectionViewSource x:Key="albumsViewSource"></CollectionViewSource>
-        <!-- Spotify-like Theme Colors and Styles -->
-        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <!-- Adjusted Theme Colors and Styles for Green Dominant Scheme -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
+        <!-- Green as dominant background -->
+        <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
+        <!-- Black for accentuating elements -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <!-- White text remains unchanged -->
         <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
-        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#282828"/>
-        <SolidColorBrush x:Key="DataGridRowColor" Color="#333333"/>
+        <!-- Secondary text color unchanged -->
+        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#13A843"/>
+        <!-- A slightly different green for hover states -->
+        <SolidColorBrush x:Key="DataGridRowColor" Color="#198844"/>
+        <!-- A darker green for DataGrid rows for contrast -->
 
-        <!-- DataGrid Styles -->
+        <!-- Definition for albumsViewSource added -->
+        <CollectionViewSource x:Key="albumsViewSource"/>
+
+        <!-- Updated DataGrid Styles for the new color scheme -->
         <Style TargetType="DataGrid">
             <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
             <Setter Property="RowBackground" Value="{StaticResource DataGridRowColor}"/>
             <Setter Property="AlternatingRowBackground" Value="{StaticResource BackgroundColor}"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
@@ -30,9 +38,11 @@
             <Setter Property="ColumnHeaderStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+                        <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+                        <!-- Black for headers -->
                         <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
-                        <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor}"/>
+                        <!-- Green border -->
                         <Setter Property="BorderThickness" Value="0,0,0,1"/>
                     </Style>
                 </Setter.Value>
@@ -48,12 +58,10 @@
             </Setter>
         </Style>
 
-        <!-- TextBlock Style -->
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
         </Style>
 
-        <!-- TextBox Style -->
         <Style TargetType="TextBox">
             <Setter Property="Foreground" Value="{StaticResource SecondaryTextColor}"/>
             <Setter Property="Background" Value="{StaticResource HoverBackgroundColor}"/>
@@ -65,16 +73,12 @@
     <Grid Background="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Title TextBlock -->
             <RowDefinition Height="Auto"/>
-            <!-- Search TextBox -->
             <RowDefinition Height="*"/>
-            <!-- DataGrid -->
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="ALBUMS PAGE" FontSize="48" Foreground="{StaticResource AccentColor}"/>
 
-        <!-- Search TextBox UI Element -->
         <TextBox x:Name="SearchTextBox" Grid.Row="1"
                  Text="Search by album title..." 
                  GotFocus="SearchTextBox_GotFocus"
@@ -82,7 +86,6 @@
                  TextChanged="SearchTextBox_TextChanged"
                  Margin="5" Padding="3"/>
 
-        <!-- DataGrid to display albums -->
         <DataGrid Grid.Row="2" ItemsSource="{Binding Source={StaticResource albumsViewSource}}"
                   AutoGenerateColumns="False" EnableColumnVirtualization="True"
                   VerticalAlignment="Stretch">

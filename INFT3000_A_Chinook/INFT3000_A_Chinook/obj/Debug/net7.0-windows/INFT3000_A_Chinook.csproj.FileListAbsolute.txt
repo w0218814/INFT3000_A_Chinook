@@ -73,3 +73,4 @@ C:\INFT3000\INFT3000_A_Chinook\INFT3000_A_Chinook\obj\Debug\net7.0-windows\refin
 C:\INFT3000\INFT3000_A_Chinook\INFT3000_A_Chinook\obj\Debug\net7.0-windows\INFT3000_A_Chinook.pdb
 C:\INFT3000\INFT3000_A_Chinook\INFT3000_A_Chinook\obj\Debug\net7.0-windows\INFT3000_A_Chinook.genruntimeconfig.cache
 C:\INFT3000\INFT3000_A_Chinook\INFT3000_A_Chinook\obj\Debug\net7.0-windows\ref\INFT3000_A_Chinook.dll
+C:\INFT3000\INFT3000_A_Chinook\INFT3000_A_Chinook\obj\Debug\net7.0-windows\App.baml

@@ -4,18 +4,26 @@
       Title="Music Catalog">
 
     <Page.Resources>
-        <!-- Spotify-like Theme Colors -->
-        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <!-- Adjusted Theme Colors and Styles for Green Dominant Scheme -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
+        <!-- Green as dominant background -->
+        <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
+        <!-- Black for accentuating elements (previously background) -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <!-- White text remains unchanged -->
         <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
+        <!-- Secondary text color unchanged -->
+
+        <!-- Updated Styles for TextBlock, TextBox, ListView, and Expander with new color scheme -->
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Foreground" Value="{StaticResource SecondaryTextColor}"/>
             <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+            <!-- Updated to use new dominant green -->
             <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+            <!-- Black border -->
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style TargetType="ListView">
@@ -26,6 +34,7 @@
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
             <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
             <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+            <!-- Black border for accent -->
         </Style>
     </Page.Resources>
 
@@ -39,12 +48,12 @@
             <!-- ListView -->
         </Grid.RowDefinitions>
 
-        <!-- Title TextBlock -->
+        <!-- Title TextBlock updated to use black for accentuating this header -->
         <TextBlock Grid.Row="0" Text="MUSIC CATALOG" FontSize="48" 
                    HorizontalAlignment="Left" VerticalAlignment="Center"
                    Foreground="{StaticResource AccentColor}"/>
 
-        <!-- Search Box for Artist -->
+        <!-- Search Box for Artist updated to match new scheme -->
         <TextBox x:Name="SearchTextBox" Grid.Row="1"
                  Text="Search music catalog..." 
                  GotFocus="SearchTextBox_GotFocus"
@@ -52,7 +61,7 @@
                  TextChanged="SearchTextBox_TextChanged"
                  Margin="5" Padding="3"/>
 
-        <!-- ListView for Artist Groupings -->
+        <!-- ListView for Artist Groupings updated to match new scheme -->
         <ListView Grid.Row="2" x:Name="ArtistGroupListView" Margin="10">
             <ListView.ItemTemplate>
                 <DataTemplate>

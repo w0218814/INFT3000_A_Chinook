@@ -10,19 +10,25 @@
 
     <Page.Resources>
         <CollectionViewSource x:Key="artistsViewSource"/>
-        <!-- Spotify-like Theme Colors -->
-        <SolidColorBrush x:Key="BackgroundColor" Color="#121212"/>
-        <SolidColorBrush x:Key="AccentColor" Color="#1DB954"/>
+        <!-- Adjusted Theme Colors and Styles for Green Dominant Scheme -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#1DB954"/>
+        <!-- Green as dominant background -->
+        <SolidColorBrush x:Key="AccentColor" Color="#121212"/>
+        <!-- Black for accentuating elements (previously background) -->
         <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+        <!-- White text remains unchanged -->
         <SolidColorBrush x:Key="SecondaryTextColor" Color="#B3B3B3"/>
-        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#282828"/>
-        <SolidColorBrush x:Key="DataGridRowColor" Color="#333333"/>
+        <!-- Secondary text color unchanged -->
+        <SolidColorBrush x:Key="HoverBackgroundColor" Color="#13A843"/>
+        <!-- A slightly different green for hover states -->
+        <SolidColorBrush x:Key="DataGridRowColor" Color="#198844"/>
+        <!-- A darker green for DataGrid rows for contrast -->
 
-        <!-- DataGrid Styles -->
+        <!-- Updated DataGrid Styles for the new color scheme -->
         <Style TargetType="DataGrid">
             <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
             <Setter Property="RowBackground" Value="{StaticResource DataGridRowColor}"/>
             <Setter Property="AlternatingRowBackground" Value="{StaticResource BackgroundColor}"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
@@ -30,9 +36,11 @@
             <Setter Property="ColumnHeaderStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+                        <Setter Property="Background" Value="{StaticResource AccentColor}"/>
+                        <!-- Black for headers -->
                         <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
-                        <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+                        <Setter Property="BorderBrush" Value="{StaticResource BackgroundColor}"/>
+                        <!-- Green border -->
                         <Setter Property="BorderThickness" Value="0,0,0,1"/>
                     </Style>
                 </Setter.Value>
@@ -48,16 +56,18 @@
             </Setter>
         </Style>
 
-        <!-- TextBlock Style -->
+        <!-- TextBlock Style unchanged, as it uses TextColor for foreground -->
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
         </Style>
 
-        <!-- TextBox Style -->
+        <!-- Adjusted TextBox Style for the new color scheme -->
         <Style TargetType="TextBox">
             <Setter Property="Foreground" Value="{StaticResource SecondaryTextColor}"/>
             <Setter Property="Background" Value="{StaticResource HoverBackgroundColor}"/>
+            <!-- Lighter green for background -->
             <Setter Property="BorderBrush" Value="{StaticResource AccentColor}"/>
+            <!-- Black border -->
             <Setter Property="BorderThickness" Value="2"/>
         </Style>
     </Page.Resources>
