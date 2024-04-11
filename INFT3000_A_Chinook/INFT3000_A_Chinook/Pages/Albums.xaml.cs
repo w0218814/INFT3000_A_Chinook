@@ -8,7 +8,7 @@ using System.Windows.Data;
 using INFT3000_A_Chinook.Models;
 using System;
 
-namespace INFT3000_A_Chinook.Pages // Now A3
+namespace INFT3000_A_Chinook.Pages
 {
     public partial class Albums : Page
     {

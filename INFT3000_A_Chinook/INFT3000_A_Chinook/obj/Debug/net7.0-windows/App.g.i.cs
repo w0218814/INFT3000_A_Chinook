@@ -59,7 +59,7 @@ namespace INFT3000_A_Chinook {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/INFT3000_A_Chinook;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/INFT3000_A_Chinook;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

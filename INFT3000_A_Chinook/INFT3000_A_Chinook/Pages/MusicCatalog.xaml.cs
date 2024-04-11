@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using INFT3000_A_Chinook.Data;
 using INFT3000_A_Chinook.Models;
 
-namespace INFT3000_A_Chinook.Pages // Now A3
+namespace INFT3000_A_Chinook.Pages
 {
     public partial class MusicCatalog : Page
     {

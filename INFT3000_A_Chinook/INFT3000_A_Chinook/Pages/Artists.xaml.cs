@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace INFT3000_A_Chinook.Pages // Now A3
+namespace INFT3000_A_Chinook.Pages
 {
     public partial class Artists : Page
     {

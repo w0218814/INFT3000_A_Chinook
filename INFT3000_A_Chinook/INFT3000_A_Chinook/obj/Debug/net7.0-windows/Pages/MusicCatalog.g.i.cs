@@ -68,7 +68,7 @@ namespace INFT3000_A_Chinook.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/INFT3000_A_Chinook;component/pages/musiccatalog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/INFT3000_A_Chinook;V1.0.0.0;component/pages/musiccatalog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\MusicCatalog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
